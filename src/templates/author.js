@@ -1,24 +1,42 @@
-import React, { Component } from "react"
-import { graphql } from "gatsby"
+import React from "react"
+import { Link, graphql } from "gatsby"
+import { Header, List } from "semantic-ui-react"
 
-class AuthorTemplate extends Component {
-  render() {
-    const author = this.props.data.contentfulAuthor
-    return (
-      <div>
-        <h1>{author.name}</h1>
-      </div>
-    )
-  }
-}
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-export default AuthorTemplate
+export default ({ data }) => (
+  <Layout>
+    <SEO title={data.contentfulAuthor.name} />
+    <Header as="h1">{data.contentfulAuthor.name}</Header>
+    <List>
+      {data.contentfulAuthor.books.map(({ title, id }) => {
+        return (
+          <List.Item key={id}>
+            <Link
+              to={`/libros/${id}`}
+              style={{
+                textDecoration: `none`,
+              }}
+            >
+              {title}
+            </Link>
+          </List.Item>
+        )
+      })}
+    </List>
+  </Layout>
+)
 
 export const pageQuery = graphql`
   query authorQuery($id: String!) {
     contentfulAuthor(id: { eq: $id }) {
       id
       name
+      books {
+        id
+        title
+      }
     }
   }
 `

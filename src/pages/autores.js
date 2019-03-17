@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
+import { Header, List } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,18 +8,24 @@ import SEO from "../components/seo"
 export default ({ data }) => (
   <Layout>
     <SEO title="Nuestros autores" />
-    <h1>Nuestros autores</h1>
+    <Header as="h1">Nuestros autores</Header>
     <p>Revisa nuestros autores</p>
-    <ul>
+    <List>
       {data.allContentfulAuthor.edges.map(({ node, id }) => {
         return (
-          <li key={node.id}>
-            <Link to={`/autores/${node.id}`}>{node.name}</Link>
-          </li>
+          <List.Item key={node.id}>
+            <Link
+              to={`/autores/${node.id}`}
+              style={{
+                textDecoration: `none`,
+              }}
+            >
+              {node.name}
+            </Link>
+          </List.Item>
         )
       })}
-    </ul>
-    <Link to="/">Go back to the homepage</Link>
+    </List>
   </Layout>
 )
 

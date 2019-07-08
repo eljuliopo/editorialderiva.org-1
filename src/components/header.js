@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Header, Menu } from "semantic-ui-react"
+import { Header, Menu, Image, Icon } from "semantic-ui-react"
+import Logo from "../images/Logo.svg"
 
 export default ({ siteTitle }) => (
   <header
@@ -24,38 +25,21 @@ export default ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
+        <Image size='small' src={ Logo } alt='logo deriva' centered />
         </Link>
       </Header>
-      <Menu text>
+      <Menu text stackable compact size='small' >
         <Menu.Item>
           <Link
-            to="/autores"
+            to="/"
             style={{
               textDecoration: `none`,
+              cursor: `pointer !important`,
             }}
           >
-            Autores
-          </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link
-            to="/colecciones"
-            style={{
-              textDecoration: `none`,
-            }}
-          >
-            Colecciones
-          </Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link
-            to="/generos"
-            style={{
-              textDecoration: `none`,
-            }}
-          >
-            Géneros
+            <Header as='h6'>
+              <Icon fitted name='home' />
+            </Header>
           </Link>
         </Menu.Item>
         <Menu.Item>
@@ -66,10 +50,71 @@ export default ({ siteTitle }) => (
               cursor: `pointer !important`,
             }}
           >
-            Libros
+            <Header as='h6' style={{
+              textTransform: 'uppercase',
+            }}>
+              Catálogo
+            </Header>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link
+            to="/autores"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            <Header as='h6' style={{
+              textTransform: 'uppercase',
+            }}>
+              Autores
+            </Header>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link
+            to="/colecciones"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            <Header as='h6' style={{
+              textTransform: 'uppercase',
+            }}>
+              Colecciones
+            </Header>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link
+            to="/generos"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            <Header as='h6' style={{
+              textTransform: 'uppercase',
+            }}>
+              Géneros
+            </Header>
+          </Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link
+            to="/contacto"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            <Header as='h6' style={{
+              textTransform: 'uppercase',
+            }}>
+              Contacto
+            </Header>
           </Link>
         </Menu.Item>
       </Menu>
+
     </div>
   </header>
 )

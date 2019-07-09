@@ -1,15 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Header, List } from "semantic-ui-react"
+import { Header, List, Divider } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Nuestras colecciones" />
-    <Header as="h1">Nuestras colecciones</Header>
-    <p>Revisa nuestras colecciones</p>
+    <SEO title="colecciones" />
+    <Header as="h2" style={{
+      textAlign: 'right',
+    }}>COLECCIONES</Header>
+    <Divider />
     <List>
       {data.allContentfulCollection.edges.map(({ node, id }) => {
         return (
@@ -20,7 +22,12 @@ export default ({ data }) => (
                 textDecoration: `none`,
               }}
             >
-              {node.name}
+              <Header as='h4' style={{
+                textTransform: 'uppercase',
+                textAlign: 'right',
+              }}>
+                {node.name}
+              </Header>
             </Link>
           </List.Item>
         )

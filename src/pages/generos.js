@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Header, List } from "semantic-ui-react"
+import { Header, List, Divider } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,8 +8,10 @@ import SEO from "../components/seo"
 export default ({ data }) => (
   <Layout>
     <SEO title="Géneros" />
-    <Header as="h1">Géneros</Header>
-    <p>Revisa por género</p>
+    <Header as="h2" style={{
+      textAlign: 'right',
+    }}>GÉNEROS</Header>
+    <Divider />
     <List>
       {data.allContentfulGenre.edges.map(({ node, id }) => {
         return (
@@ -20,7 +22,12 @@ export default ({ data }) => (
                 textDecoration: `none`,
               }}
             >
-              {node.name}
+              <Header as='h4' style={{
+                textAlign: 'right',
+                textTransform: 'uppercase',
+              }}>
+                {node.name}
+              </Header>
             </Link>
           </List.Item>
         )

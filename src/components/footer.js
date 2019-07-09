@@ -1,4 +1,5 @@
 import React from "react"
+import { Header } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
   <footer
@@ -6,8 +7,13 @@ export default ({ siteTitle }) => (
       marginTop: `3.2rem`,
     }}
   >
-    © {new Date().getFullYear()}, Built with
+  <Header as='h6' style={{
+    textTransform: 'uppercase',
+    textAlign: 'center'
+  }}>
+    EDITORIAL DERIVA © {new Date().getFullYear()}, Built with
     {` `}
     <a href="https://www.gatsbyjs.org">Gatsby</a>
+  </Header>
   </footer>
 )

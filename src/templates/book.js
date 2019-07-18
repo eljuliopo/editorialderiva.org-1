@@ -20,24 +20,40 @@ export default ({ data }) => (
 
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={10}>
+<<<<<<< HEAD
 
 
           <div>
             <Header as="h3"  style={{
               textTransform: `uppercase`,
               textAlign: `right`,
+=======
+            <Divider />
+          <div>
+            <Header as="h3"  style={{
+              textTransform: `uppercase`,
+              textAlign: `left`,
+>>>>>>> origin
             }}>
             {data.contentfulBook.title}{" "}
               <Header.Subheader>
                 <Link to={`/autores/${data.contentfulBook.author[0].id}`}>
+<<<<<<< HEAD
                   <Header as="h5" color='blue' style={{
                     textAlign: `right`,
+=======
+                  <Header as="h5" color='grey' style={{
+                    textAlign: `left`,
+>>>>>>> origin
                   }}>
                         <u>{data.contentfulBook.author[0].name}</u>
                   </Header>
                 </Link>
               </Header.Subheader>
+<<<<<<< HEAD
               <br />
+=======
+>>>>>>> origin
               <Header.Subheader>
                 <Header as="h6" color='grey' style={{
                   textTransform: `uppercase`,
@@ -52,11 +68,16 @@ export default ({ data }) => (
                   <Link to={`/generos/${data.contentfulBook.genre[0].id}`}>
                   {data.contentfulBook.genre[0].name}
                   </Link>
+<<<<<<< HEAD
                   <br/>{data.contentfulBook.pages} págs. |  {data.contentfulBook.binding}
+=======
+                  <br/>{data.contentfulBook.pages} págs.
+>>>>>>> origin
                 </Header>
               </Header.Subheader>
             </Header>
             <Divider />
+<<<<<<< HEAD
             <Container textAlign='right'>
             <Header as='h6' color='grey'  style={{
               textTransform: 'uppercase',
@@ -68,6 +89,8 @@ export default ({ data }) => (
             <br/><br/>
             </Header>
             </Container>
+=======
+>>>>>>> origin
             <Container>
               {data.contentfulBook.abstract.content.map((paragraph, index) => {
                 return (
@@ -85,7 +108,23 @@ export default ({ data }) => (
                 )
               })}
               <Divider />
+<<<<<<< HEAD
 
+=======
+              <Container textAlign='right'>
+              <Header as='h6' style={{
+                textTransform: 'uppercase',
+              }}>
+              <i>« {data.contentfulBook.originalTitle} »</i>
+              <br />
+              {data.contentfulBook.publisher} ℗ {data.contentfulBook.year}
+              <br/><br/>
+
+              Encuadernación {data.contentfulBook.binding}
+              <br/><br/>
+              </Header>
+              </Container>
+>>>>>>> origin
               <Container textAlign='right'>
               <Label basic color='black'>
               <Icon name='print' /> Valor impreso: ${data.contentfulBook.price}

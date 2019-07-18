@@ -26,7 +26,7 @@ export default ({ data }) => (
     ]}
   />
       <br/>
-    <Form action="https://formspree.io/contacto@editorialderiva.org" method="POST">
+    <Form action="https://formspree.io/editorialderiva@gmail.com" method="POST">
       <Form.Group widths='equal'>
         <Form.Field required>
           <label>Nombre</label>

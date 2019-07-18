@@ -20,22 +20,24 @@ export default ({ data }) => (
 
         </Grid.Column>
         <Grid.Column mobile={16} tablet={8} computer={10}>
-            <Divider />
+
+
           <div>
             <Header as="h3"  style={{
               textTransform: `uppercase`,
-              textAlign: `left`,
+              textAlign: `right`,
             }}>
             {data.contentfulBook.title}{" "}
               <Header.Subheader>
                 <Link to={`/autores/${data.contentfulBook.author[0].id}`}>
-                  <Header as="h5" color='grey' style={{
-                    textAlign: `left`,
+                  <Header as="h5" color='blue' style={{
+                    textAlign: `right`,
                   }}>
                         <u>{data.contentfulBook.author[0].name}</u>
                   </Header>
                 </Link>
               </Header.Subheader>
+              <br />
               <Header.Subheader>
                 <Header as="h6" color='grey' style={{
                   textTransform: `uppercase`,
@@ -50,11 +52,22 @@ export default ({ data }) => (
                   <Link to={`/generos/${data.contentfulBook.genre[0].id}`}>
                   {data.contentfulBook.genre[0].name}
                   </Link>
-                  <br/>{data.contentfulBook.pages} págs.
+                  <br/>{data.contentfulBook.pages} págs. |  {data.contentfulBook.binding}
                 </Header>
               </Header.Subheader>
             </Header>
             <Divider />
+            <Container textAlign='right'>
+            <Header as='h6' color='grey'  style={{
+              textTransform: 'uppercase',
+            }}>
+            <i>« {data.contentfulBook.originalTitle} »</i>
+            <br />
+            {data.contentfulBook.publisher} ℗ {data.contentfulBook.year}
+
+            <br/><br/>
+            </Header>
+            </Container>
             <Container>
               {data.contentfulBook.abstract.content.map((paragraph, index) => {
                 return (
@@ -72,19 +85,7 @@ export default ({ data }) => (
                 )
               })}
               <Divider />
-              <Container textAlign='right'>
-              <Header as='h6' style={{
-                textTransform: 'uppercase',
-              }}>
-              <i>« {data.contentfulBook.originalTitle} »</i>
-              <br />
-              {data.contentfulBook.publisher} ℗ {data.contentfulBook.year}
-              <br/><br/>
 
-              Encuadernación {data.contentfulBook.binding}
-              <br/><br/>
-              </Header>
-              </Container>
               <Container textAlign='right'>
               <Label basic color='black'>
               <Icon name='print' /> Valor impreso: ${data.contentfulBook.price}

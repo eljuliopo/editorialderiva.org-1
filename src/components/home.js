@@ -1,7 +1,5 @@
 import React from "react"
-
-
-import { Header, Grid, Divider } from "semantic-ui-react"
+import { Grid, Divider, Image } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
   <div
@@ -9,10 +7,11 @@ export default ({ siteTitle }) => (
       marginTop: `3.2rem`,
     }}
   >
-    <Header
-      as='h5'>
 
-    </Header>
+    <Image src="https://scontent-scl1-1.xx.fbcdn.net/v/t1.0-9/20431311_134286957172820_4720095749760903401_n.jpg?_nc_cat=103&_nc_oc=AQmlQBUOYH55fpdc56A5vZX5BZ7cUV_y2cM4v_yEqkITbUFkKX6v3Hv0dmCpX-hpxBk&_nc_ht=scontent-scl1-1.xx&oh=d573330be6c8f75b5a961ad427f07dca&oe=5DEA4254" style={{
+      
+    }} />
+
     <Divider />
     <Grid stackable columns='equal' style={{
       textAlign: 'justify'

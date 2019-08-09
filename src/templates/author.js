@@ -13,7 +13,7 @@ export default ({ data }) => (
         <Grid.Column mobile={16} tablet={8} computer={4}>
           <Image
           left
-          circular
+          rounded
           centered
           size='medium'
           src={data.contentfulAuthor.image.resize.src}
@@ -23,12 +23,13 @@ export default ({ data }) => (
         </Grid.Column>
       <Grid.Column mobile={16} tablet={8} computer={12}>
         <Header as="h2" style={{textTransform:'uppercase',textAlign:'right'}}>
-        <Flag name={data.contentfulAuthor.country} />{data.contentfulAuthor.name}
+        {data.contentfulAuthor.name}
           <Header.Subheader bold='true' style={{
             textAlign: 'right',
             fontSize:'0.5em',
             fontWeight: 'strong',
           }}>
+          <Flag name={data.contentfulAuthor.country} /><br/>
            {data.contentfulAuthor.birth} <br/>{data.contentfulAuthor.death}
           </Header.Subheader>
         </Header>
@@ -46,31 +47,34 @@ export default ({ data }) => (
     En esta editorial:
     </Header>
 
+    <Grid centered columns={4}>
     {data.contentfulAuthor.books.map(({ title, id, cover }) => {
       return (
+          <Grid.Column key={id}  mobile={8} tablet={6} computer={4}>
+            <List.Item key={id} align='right'>
+            <Link
+            to={`/libros/${id}`}
+            style={{
+              textDecoration: `none`,
+            }}
+            >
+            <Image
+            right
+            src={cover.resize.src}
+            alt={title}
+            />
+            <Header as='h6' style={{
+              textTransform: 'uppercase'
+            }}>
+            {title}
+            </Header>
+            </Link>
 
-        <List.Item key={id} align='right'>
-        <Link
-        to={`/libros/${id}`}
-        style={{
-          textDecoration: `none`,
-        }}
-        >
-        <Image
-        right
-        src={cover.resize.src}
-        alt={title}
-        />
-        <Header as='h6' style={{
-          textTransform: 'uppercase'
-        }}>
-        {title}
-        </Header>
-        </Link>
-
-        </List.Item>
+            </List.Item>
+          </Grid.Column>
       )
     })}
+    </Grid>
     </List>
   </Layout>
 )
@@ -81,7 +85,7 @@ export const pageQuery = graphql`
       id
       name
       image {
-        resize(width: 300) {
+        resize(width: 250) {
           src
         }
       }

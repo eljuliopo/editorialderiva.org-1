@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Header, List, Flag, Image, Container, Grid, Divider } from "semantic-ui-react"
+import { Header, List, Flag, Image, Container, Grid, Divider} from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,22 +15,23 @@ export default ({ data }) => (
           left
           circular
           centered
-          size='small'
+          size='medium'
           src={data.contentfulAuthor.image.resize.src}
           alt={data.contentfulAuthor.name}
           />
-          <Header as="h4" style={{textTransform:'uppercase',textAlign:'center'}}>
-          {data.contentfulAuthor.name}
-            <Header.Subheader bold='true' style={{
-              textAlign: 'center',
-              fontSize:'0.6em',
-              fontWeight: 'strong',
-            }}>
-              <Flag name={data.contentfulAuthor.country} />  {data.contentfulAuthor.birth} <br/>† {data.contentfulAuthor.death}
-            </Header.Subheader>
-          </Header>
+
         </Grid.Column>
       <Grid.Column mobile={16} tablet={8} computer={12}>
+        <Header as="h2" style={{textTransform:'uppercase',textAlign:'right'}}>
+        <Flag name={data.contentfulAuthor.country} />{data.contentfulAuthor.name}
+          <Header.Subheader bold='true' style={{
+            textAlign: 'right',
+            fontSize:'0.5em',
+            fontWeight: 'strong',
+          }}>
+           {data.contentfulAuthor.birth} <br/>{data.contentfulAuthor.death}
+          </Header.Subheader>
+        </Header>
         <Divider/>
         <Container>
           {data.contentfulAuthor.biography.biography}
@@ -80,7 +81,7 @@ export const pageQuery = graphql`
       id
       name
       image {
-        resize(width: 200) {
+        resize(width: 300) {
           src
         }
       }
@@ -94,7 +95,7 @@ export const pageQuery = graphql`
         id
         title
         cover {
-          resize(width: 100) {
+          resize(width: 150) {
             src
           }
         }

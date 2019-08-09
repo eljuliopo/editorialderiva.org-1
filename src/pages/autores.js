@@ -33,10 +33,12 @@ export default ({ data }) => (
                     <Item.Header as='a' href={`/autores/${node.id}`} >
                       <Header as='h6' style={{
                         textTransform: 'uppercase'
-                      }}>{node.name}</Header>
+                      }}><Flag name={node.country} /> {node.name}</Header>
                     </Item.Header>
 
-                    <Item.Description><Header as='h6'><Flag name={node.country} /> {node.birth}<br/>{node.death}</Header></Item.Description>
+                    <Item.Description><Header as='h6' style={{
+                      color: 'grey'
+                    }}> {node.birth}<br/>{node.death}</Header></Item.Description>
                     </Item.Content>
 
               </Item>

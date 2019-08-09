@@ -1,37 +1,25 @@
 import React from "react"
-<<<<<<< HEAD
-import { Grid, Divider, Image } from "semantic-ui-react"
-=======
-
-
-import { Header, Grid, Divider } from "semantic-ui-react"
->>>>>>> origin
+import { Grid, Divider, Image, Segment } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
-  <div
+  <div id="begin"
     style={{
       marginTop: `3.2rem`,
     }}
   >
-<<<<<<< HEAD
+  <Segment  inverted textAlign="center">
 
-    <Image src="https://scontent-scl1-1.xx.fbcdn.net/v/t1.0-9/20431311_134286957172820_4720095749760903401_n.jpg?_nc_cat=103&_nc_oc=AQmlQBUOYH55fpdc56A5vZX5BZ7cUV_y2cM4v_yEqkITbUFkKX6v3Hv0dmCpX-hpxBk&_nc_ht=scontent-scl1-1.xx&oh=d573330be6c8f75b5a961ad427f07dca&oe=5DEA4254" style={{
-      
-    }} />
+    <Image src="https://scontent-scl1-1.xx.fbcdn.net/v/t1.0-9/20431311_134286957172820_4720095749760903401_n.jpg?_nc_cat=103&_nc_oc=AQmlQBUOYH55fpdc56A5vZX5BZ7cUV_y2cM4v_yEqkITbUFkKX6v3Hv0dmCpX-hpxBk&_nc_ht=scontent-scl1-1.xx&oh=d573330be6c8f75b5a961ad427f07dca&oe=5DEA4254" style={{ }} />
 
-=======
-    <Header
-      as='h5'>
+    </Segment>
 
-    </Header>
->>>>>>> origin
     <Divider />
     <Grid stackable columns='equal' style={{
       textAlign: 'justify'
     }}>
       <Grid.Column width={3}>
-        </Grid.Column>
-        <Grid.Column width={10}>
+      </Grid.Column>
+      <Grid.Column width={10}>
         <p>
         <b>EDITORIAL DERIVA</b> se conforma con el objetivo de proveer materiales teóricos que permitan acompañar y potenciar las luchas que despliega la población oprimida y explotada de este y otros territorios.
         </p>

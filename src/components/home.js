@@ -1,21 +1,19 @@
 import React from "react"
-import { Grid, Divider, Image, Segment } from "semantic-ui-react"
+import { Grid, Image, Segment } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
-  <div id="begin"
+  <div id="inicio"
     style={{
       marginTop: `3.2rem`,
     }}
   >
-  <Segment  inverted textAlign="center">
+  <Segment textAlign="center">
 
     <Image src="https://scontent-scl1-1.xx.fbcdn.net/v/t1.0-9/20431311_134286957172820_4720095749760903401_n.jpg?_nc_cat=103&_nc_oc=AQmlQBUOYH55fpdc56A5vZX5BZ7cUV_y2cM4v_yEqkITbUFkKX6v3Hv0dmCpX-hpxBk&_nc_ht=scontent-scl1-1.xx&oh=d573330be6c8f75b5a961ad427f07dca&oe=5DEA4254" style={{ }} />
 
     </Segment>
-
-    <Divider />
     <Grid stackable columns='equal' style={{
-      textAlign: 'justify'
+      textAlign: 'left'
     }}>
       <Grid.Column width={3}>
       </Grid.Column>
@@ -36,6 +34,5 @@ export default ({ siteTitle }) => (
         <Grid.Column width={3}>
         </Grid.Column>
       </Grid>
-      <Divider />
   </div>
 )

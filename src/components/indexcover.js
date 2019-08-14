@@ -49,7 +49,7 @@ export default ({ siteTitle }) => (
     <Container text textAlign='center' attached="bottom" fluid style={{
       marginTop: '10em'
     }}>
-      <Link to="#begin">
+      <Link to="#inicio">
         <Icon name='angle down' color='black' size='big' />
       </Link>
     </Container>

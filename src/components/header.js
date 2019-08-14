@@ -72,25 +72,12 @@ export default ({ siteTitle }) => (
             </Dropdown.Menu>
           </Dropdown>
 
-          <Dropdown item text='Contacto'>
-            <Dropdown.Menu>
-              <Dropdown.Item>
-                <Header as='h5'> Pedidos </Header>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to="/contacto"
-                  style={{
-                    textDecoration: `none`,
-                  }}
-                >
-                  <Header as='h5'>
-                    Contáctanos
-                  </Header>
-                </Link>
-              </Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+          <Menu.Item
+            name='contacto'
+            as={Link}
+            to='/contacto'
+            content='Contacto'
+          />
 
 
 

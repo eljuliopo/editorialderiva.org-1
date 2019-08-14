@@ -34,7 +34,7 @@ module.exports = {
         background_color: `#FFFFFF`,
         theme_color: `#000000`,
         display: `minimal-ui`,
-        icon: `src/images/boat-iso.png`, // This path is relative to the root of the site.
+        icon: `src/images/boat.png`, // This path is relative to the root of the site.
       },
       pathPrefix: "/deriva-gatsby"
     },

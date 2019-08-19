@@ -8,13 +8,13 @@ export default ({ siteTitle }) => (
       marginTop: `3.2rem`,
     }}
   >
-  <Header as='h6' verticalAlign="botttom" style={{
-    textTransform: 'uppercase',
-    textAlign: 'center',
-
-  }}>
   <Divider />
-  <Image src={boat} verticalAlign='bottom' size="small" /> <br/> EDITORIAL DERIVA © {new Date().getFullYear()}, Desarrollado con
+  <Header as='h6' verticalAlign="botttom" style={{
+    textAlign: 'center',
+    fontWeight: 'bold'
+  }}>
+  <Image src={boat} size="tiny" />
+  <br/> Editorial DERIVA / {new Date().getFullYear()}<br/> Build with
     {` `}
     <a href="https://www.gatsbyjs.org" target='_blank' rel="noopener noreferrer" >Gatsby</a>
   </Header>

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 import { Header, Image, Divider, Label, Icon, Container, Grid } from "semantic-ui-react"
 
 import Layout from "../components/layout"
@@ -76,7 +77,7 @@ export default ({ data }) => (
                   <p
                   key={index}
                   style={{
-                    textAlign: 'justify',
+                    textAlign: 'left',
                     fontSize: '0.9em',
                   }}
                   >

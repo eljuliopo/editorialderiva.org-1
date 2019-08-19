@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
-import { Header, Grid, Image, Divider } from "semantic-ui-react"
+import { Header, Grid, Image, Divider, Label } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,56 +17,61 @@ export default ({ data }) => (
         return (
 
           <Grid.Column key={node.id}  mobile={8} tablet={6} computer={4}>
-          <Image
-            fluid
-            src={node.cover.resize.src}
-            alt={node.id}
-            as='a'
-            href={`/libros/${node.id}`}  />
-          <br/>
-          <Link
-            to={`/libros/${node.id}`}
-            style={{
-              textDecoration: `none`,
-            }}
-          >
+            <Image
+              fluid
+              rounded='left'
+              src={node.cover.resize.src}
+              alt={node.id}
+              as='a'
+              label={{ as: 'a', color: 'grey', content: node.genre[0].name, attached: 'top right', size: 'tiny', href: `/generos/${node.genre[0].id}` }}
+              href={`/libros/${node.id}`} />
+
             <Header as='h5' style={{
-              textTransform: `uppercase`,
-              textAlign: `left`,
+              marginTop: '0.1rem',
             }}>
-              {node.title}
-            </Header>
-          </Link>
-
             <Link
-            to={`/autores/${node.author[0].id}`}
-            style={{
-              textDecoration: `none`,
-            }}
-            >
-              <Header as='h5' color='grey' style={{
-                textAlign: `left`,
+              to={`/libros/${node.id}`}
+              style={{
+                textTransform: 'uppercase',
+                color: 'black',
+                fontSize: '1em',
+                fontWeight: 'bold'
               }}
-              >
-                {node.author[0].name}
-              </Header>
-            </Link>
-
-          <Link
-            to={`/colecciones/${node.collection[0].id}`}
-            style={{
-              textDecoration: `none`,
-            }}
-          >
-            <Header as='h6' color='blue' style={{
-              textTransform: `uppercase`,
-              textAlign: `left`,
-            }}
             >
-              {node.collection[0].name}
+
+                {node.title}
+            </Link>
             </Header>
-          </Link>
-          <br/>
+            <Header.Subheader>
+              <Header as='h6' color='grey' >
+                <Link
+                to={`/autores/${node.author[0].id}`}
+                style={{
+                  textDecoration: `none`,
+                  textTransform: 'uppercase',
+                  textAlign: 'left',
+                  fontSize: '1.3em'
+                }}
+                >
+                  {node.author[0].name}
+                  </Link>
+                  {" "}{node.year}
+                  <br/>
+                   {node.pages} págs.
+                  <br/>
+                  <Link
+                  to={`/colecciones/${node.collection[0].id}`}
+                  style={{
+                    textTransform: 'uppercase',
+                    textAlign: 'left',
+                    color: 'grey'
+                  }}>
+                  ►{node.collection[0].name}
+                  </Link>
+
+                </Header>
+            <br/>
+            </Header.Subheader>
           </Grid.Column>
 
         )
@@ -82,6 +87,8 @@ export const query = graphql`
         node {
           id
           title
+          pages
+          year
           author {
             id
             name

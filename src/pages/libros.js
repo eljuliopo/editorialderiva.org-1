@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from 'gatsby'
-import { Header, Grid, Image, Divider, Label } from "semantic-ui-react"
+import { Header, Grid, Image, Divider} from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,7 +11,9 @@ export default ({ data }) => (
     <Header as="h2" style={{
       textAlign: 'right',
     }}>CATÁLOGO</Header>
+
     <Divider />
+
     <Grid  centered  columns={4}>
       {data.allContentfulBook.edges.map(({ node, id }) => {
         return (
@@ -29,18 +31,23 @@ export default ({ data }) => (
             <Header as='h5' style={{
               marginTop: '0.1rem',
             }}>
-            <Link
-              to={`/libros/${node.id}`}
-              style={{
-                textTransform: 'uppercase',
-                color: 'black',
-                fontSize: '1em',
-                fontWeight: 'bold'
-              }}
-            >
-
+              <Link
+                to={`/libros/${node.id}`}
+                style={{
+                  textTransform: 'uppercase',
+                  color: 'black',
+                  fontSize: '1em',
+                  fontWeight: 'bold'
+                }}
+              >
                 {node.title}
-            </Link>
+                <br/>
+                <Header as='h6' style={{
+                  marginTop: '0rem',
+                }}>
+                  {node.date}
+                </Header>
+              </Link>
             </Header>
             <Header.Subheader>
               <Header as='h6' color='grey' >
@@ -54,12 +61,13 @@ export default ({ data }) => (
                 }}
                 >
                   {node.author[0].name}
-                  </Link>
-                  {" "}{node.year}
+                </Link>
+
                   <br/>
                    {node.pages} págs.
                   <br/>
-                  <Link
+
+                <Link
                   to={`/colecciones/${node.collection[0].id}`}
                   style={{
                     textTransform: 'uppercase',
@@ -67,7 +75,7 @@ export default ({ data }) => (
                     color: 'grey'
                   }}>
                   ►{node.collection[0].name}
-                  </Link>
+                </Link>
 
                 </Header>
             <br/>
@@ -88,7 +96,7 @@ export const query = graphql`
           id
           title
           pages
-          year
+          date
           author {
             id
             name

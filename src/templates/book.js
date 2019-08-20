@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 import { Header, Image, Divider, Label, Icon, Container, Grid } from "semantic-ui-react"
 
 import Layout from "../components/layout"
@@ -15,8 +14,10 @@ export default ({ data }) => (
           <Image
             centered
             rounded
+            fluid
             src={data.contentfulBook.cover.resize.src}
             alt={data.contentfulBook.title}
+            label={{ as: 'a', color: 'grey', content: data.contentfulBook.genre[0].name, attached: 'bottom right', size: 'medium', href: `/generos/${data.contentfulBook.genre[0].id}` }}
           />
 
         </Grid.Column>
@@ -50,11 +51,8 @@ export default ({ data }) => (
                   <b>{data.contentfulBook.collection[0].name}</b>
                   </Link>
                   <br/>
-                  {data.contentfulBook.date} —{" "}
-                  <Link to={`/generos/${data.contentfulBook.genre[0].id}`}>
-                  {data.contentfulBook.genre[0].name}
-                  </Link>
-                  <br/>{data.contentfulBook.pages} págs. |  {data.contentfulBook.binding}
+                  {data.contentfulBook.date}
+                  <br/>{data.contentfulBook.pages} págs. {data.contentfulBook.binding}
                 </Header>
               </Header.Subheader>
             </Header>

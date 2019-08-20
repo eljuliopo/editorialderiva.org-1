@@ -13,44 +13,71 @@ export default ({ data }) => (
       textAlign: 'right',
     }}>{data.contentfulGenre.name}</Header>
     <Divider />
-    <Grid>
-      {data.contentfulGenre.books.map(({ title, id, author, cover, genre }) => {
+    <Grid centered  columns={4}>
+      {data.contentfulGenre.books.map(({ title, id, author, cover, genre, date, collection, pages }) => {
         return (
-          <Grid.Column key={id} mobile={8} tablet={3} computer={3}>
+          <Grid.Column key={id} mobile={8} tablet={6} computer={4}>
             <Image
             fluid
+            rounded
             src={cover.resize.src}
             alt={title}
             as='a'
             href={`/libros/${id}`}
             />
-
-            <Link
-              to={`/libros/${id}`}
-              style={{
-                textDecoration: `none`,
-              }}
-            >
-              <Header as='h5' style={{
-                textTransform: 'uppercase'
-              }}>
+            <Header as='h5' style={{
+              marginTop: '0.1rem',
+            }}>
+              <Link
+                to={`/libros/${id}`}
+                style={{
+                  textTransform: 'uppercase',
+                  color: 'black',
+                  fontSize: '1em',
+                  fontWeight: 'bold'
+                }}
+              >
                 {title}
-              </Header>
-            </Link>
-            <Link
-              to={`/autores/${author[0].id}`}>
-              <Header color='grey' as='h5'>
-                {author[0].name}
-              </Header>
-            </Link>
-            <Link
-              to={`/generos/${genre[0].id}`}>
-                <Header color='blue' as='h6' style={{
-                  textTransform: 'uppercase'
+                <br/>
+                <Header as='h6' style={{
+                  marginTop: '0rem',
                 }}>
-                 {genre[0].name}
+                  {date}
                 </Header>
-             </Link>
+              </Link>
+            </Header>
+            <Header.Subheader>
+              <Header as='h6' color='grey' >
+                <Link
+                to={`/autores/${author[0].id}`}
+                style={{
+                  textDecoration: `none`,
+                  textTransform: 'uppercase',
+                  textAlign: 'left',
+                  fontSize: '1.3em'
+                }}
+                >
+                  {author[0].name}
+                </Link>
+
+                  <br/>
+                   {pages} págs.
+                  <br/>
+
+                <Link
+                  to={`/colecciones/${collection[0].id}`}
+                  style={{
+                    textTransform: 'uppercase',
+                    textAlign: 'left',
+                    color: 'grey',
+                    fontWeight: '900'
+                  }}>
+                  ►{collection[0].name}
+                </Link>
+
+                </Header>
+            <br/>
+            </Header.Subheader>
           </Grid.Column>
         )
       })}
@@ -67,7 +94,12 @@ export const pageQuery = graphql`
         id
         title
         date
+        pages
         author {
+          id
+          name
+        }
+        collection {
           id
           name
         }

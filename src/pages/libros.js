@@ -18,7 +18,7 @@ export default ({ data }) => (
       {data.allContentfulBook.edges.map(({ node, id }) => {
         return (
 
-          <Grid.Column key={node.id}  mobile={8} tablet={6} computer={4}>
+          <Grid.Column key={node.id}  mobile={8} tablet={4} computer={4}>
             <Image
               fluid
               rounded='left'

@@ -6,17 +6,20 @@ export default ({ siteTitle }) => (
   <footer
     style={{
       marginTop: `3.2rem`,
+      backgroundColor: 'black',
+      backgroundSize: 'cover'
     }}
   >
   <Divider />
-  <Header as='h6' verticalAlign="botttom" style={{
-    textAlign: 'center',
-    fontWeight: 'bold'
-  }}>
-  <Image src={boat} size="tiny" />
-  <br/> Editorial DERIVA / {new Date().getFullYear()}<br/> Build with
-    {` `}
-    <a href="https://www.gatsbyjs.org" target='_blank' rel="noopener noreferrer" >Gatsby</a>
-  </Header>
+  <Header as='h6' verticalAlign="botttom" inverted style={{
+      textAlign: 'center',
+      fontWeight: 'bold',
+      position: 'static'
+    }}>
+    <Image as='a' href="/" src={boat} size="tiny" />
+    <br/> Editorial DERIVA / {new Date().getFullYear()}<br/> Build with
+      {` `}
+      <a href="https://www.gatsbyjs.org" target='_blank' rel="noopener noreferrer" >Gatsby</a><br/><br/>
+    </Header>
   </footer>
 )

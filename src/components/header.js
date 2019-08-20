@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Header, Menu, Image, Container, Dropdown } from "semantic-ui-react"
+import { Menu, Image, Container, Dropdown } from "semantic-ui-react"
 import Logo from "../images/Logo.svg"
 
 
@@ -44,30 +44,25 @@ export default ({ siteTitle }) => (
               <Dropdown.Item
                 as={Link}
                 to='/colecciones'>
-                  <Header as='h5'>
+
                     Colecciones
-                  </Header>
+
               </Dropdown.Item>
               <Dropdown.Item
                 as={Link}
                 to='/autores' >
-                  <Header as='h5'>
+
                     Por autores
-                  </Header>
               </Dropdown.Item>
               <Dropdown.Item
                 as={Link}
                 to='/generos'>
-                  <Header as='h5'>
                     Por géneros
-                  </Header>
               </Dropdown.Item>
               <Dropdown.Item
                 as={Link}
                 to='/libros' >
-                  <Header as='h5'>
                     Todos los libros
-                  </Header>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>

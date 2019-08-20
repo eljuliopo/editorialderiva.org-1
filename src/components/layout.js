@@ -42,8 +42,8 @@ export default ({ children }) => (
           >
             {children}
           </main>
-          <Footer siteTitle={data.site.siteMetadata.title} />
         </div>
+        <Footer siteTitle={data.site.siteMetadata.title}/>
       </>
     )}
   />

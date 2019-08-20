@@ -1,5 +1,5 @@
 import React from "react"
-import { Grid, Image, Segment } from "semantic-ui-react"
+import { Grid, Image, Segment, Divider } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
   <div id="inicio"
@@ -30,6 +30,10 @@ export default ({ siteTitle }) => (
         <p><b>
         Las ideas humanas son una construcción histórica y social imposibles de apropiar, por eso, ante la propiedad intelectual, promovemos intelecto contra la propiedad.
         </b></p>
+        <Divider />
+        <Segment vertical verticalAlign='center' textAlign='center'>
+            <iframe title='fbDeriva' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FeditorialDERIVA%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=944284989104809" width="300" height="500" style={{border: '0', overflow: 'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        </Segment>
         </Grid.Column>
         <Grid.Column width={3}>
         </Grid.Column>

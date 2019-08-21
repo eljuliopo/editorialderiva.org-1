@@ -17,7 +17,8 @@ export default ({ siteTitle }) => (
       position: 'static'
     }}>
     <Image as='a' href="/" src={boat} size="tiny" />
-    <br/> Editorial DERIVA / {new Date().getFullYear()}<br/> Build with
+    <br/><br/>
+     Editorial DERIVA / {new Date().getFullYear()}<br/> Build with
       {` `}
       <a href="https://www.gatsbyjs.org" target='_blank' rel="noopener noreferrer" >Gatsby</a><br/><br/>
     </Header>

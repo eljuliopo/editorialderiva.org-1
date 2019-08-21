@@ -38,9 +38,10 @@ export default ({ siteTitle }) => (
           <Header as="h2"  textAlign='right'>
           "Ante la propiedad intelectual, promovemos intelecto contra la propiedad"
           </Header>
-          <Header as="h4" textAlign='right' style={{
-            fontStyle: 'italic',
-          }}>Editorial Deriva</Header>
+          <Header as="h6" textAlign='right' style={{
+            textTransform: 'uppercase',
+            fontWeight: 'bold'
+          }}><b>Editorial Deriva</b></Header>
 
       </Grid.Column>
       <Grid.Column width={5}>

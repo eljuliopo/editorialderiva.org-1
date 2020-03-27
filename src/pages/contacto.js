@@ -26,7 +26,7 @@ export default ({ data }) => (
     ]}
   />
       <br/>
-    <Form action="https://formspree.io/editorialderiva@gmail.com" method="POST">
+     <Form action="https://formspree.io/editorialderiva@gmail.com" method="POST">
       <Form.Group widths='equal'>
         <Form.Field required>
           <label>Nombre</label>
@@ -37,8 +37,8 @@ export default ({ data }) => (
           <input name='_replyto' placeholder='correo@ejemplo.org' />
         </Form.Field>
         <Form.TextArea required>
-          <label='Mensaje'>
-          <textarea name='message' placeholder='Déjanos tu mensaje...' />
+          <label>Mensaje</label>
+          <textarea name='message' placeholder='Déjanos tu mensaje' />
         </Form.TextArea>
       </Form.Group>
       <Form.Field required>

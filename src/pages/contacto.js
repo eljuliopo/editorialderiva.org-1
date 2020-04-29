@@ -38,7 +38,7 @@ export default ({ data }) => (
         </Form.Field>
         <Form.TextArea required>
           <label htmlFor="message">Mensaje</label>
-          <textarea type="text" name='message' placeholder='Déjanos tu mensaje' />
+          <textarea type='text' id='message' name='message' placeholder='Déjanos tu mensaje' />
         </Form.TextArea>
       </Form.Group>
       <Form.Field required>

@@ -37,7 +37,7 @@ export default ({ data }) => (
           <input name='_replyto' placeholder='correo@ejemplo.org' />
         </Form.Field>
         <Form.TextArea required>
-          <label htmlFor="message">Mensaje</label>
+          <label>Mensaje</label>
           <textarea type='text' id='message' name='message' placeholder='Déjanos tu mensaje' />
         </Form.TextArea>
       </Form.Group>

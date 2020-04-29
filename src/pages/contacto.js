@@ -39,7 +39,7 @@ export default ({ data }) => (
       </Form.Group>
       <Form.TextArea required>
           <label>Mensaje</label>
-          <textarea type='text' id='message' name='message' placeholder='Déjanos tu mensaje' />
+          <textarea type='text' name='message' placeholder='Déjanos tu mensaje' />
         </Form.TextArea>
       <Form.Field required>
         <Checkbox label='Soy human@' />

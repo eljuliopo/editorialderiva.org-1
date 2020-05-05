@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Header, List, Flag, Image, Container, Grid, Divider} from "semantic-ui-react"
+import { Header, List, Flag, Image, Container, Grid, Divider, Label, Segment } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,24 +11,26 @@ export default ({ data }) => (
     <Grid>
       <Grid.Row>
         <Grid.Column mobile={16} tablet={8} computer={4}>
-          <Image
-          left
-          circular
-          centered
-          size='medium'
-          src={data.contentfulAuthor.image.resize.src}
-          alt={data.contentfulAuthor.name}
-          />
-
+          <Segment>
+            <Image
+            size='big'
+            src={data.contentfulAuthor.image.resize.src}
+            alt={data.contentfulAuthor.name}
+            />
+            <Label corner='left' size='large' attached='top left'>
+            <Flag name={data.contentfulAuthor.country} />
+            </Label>
+          </Segment>
         </Grid.Column>
       <Grid.Column mobile={16} tablet={8} computer={12}>
         <Header as="h2" style={{textTransform:'uppercase',textAlign:'right'}}>
-        <Flag name={data.contentfulAuthor.country} />{data.contentfulAuthor.name}
+        {data.contentfulAuthor.name}
           <Header.Subheader bold='true' style={{
             textAlign: 'right',
             fontSize:'0.5em',
             fontWeight: 'strong',
           }}>
+
            {data.contentfulAuthor.birth} <br/>{data.contentfulAuthor.death}
           </Header.Subheader>
         </Header>
@@ -46,31 +48,42 @@ export default ({ data }) => (
     En esta editorial:
     </Header>
 
-    {data.contentfulAuthor.books.map(({ title, id, cover }) => {
+    <Grid centered columns={4}>
+    {data.contentfulAuthor.books.map(({ title, id, cover, date, genre }) => {
       return (
+          <Grid.Column key={id}  mobile={8} tablet={6} computer={4}>
+            <List.Item key={id} align='left'>
+            <Link
+            to={`/libros/${id}`}
+            style={{
+              textDecoration: `none`,
+              textTransform: 'uppercase',
+              fontSize: '0.8em'
+            }}
+            >
+            <Image
+            fluid
+            right
+            rounded
+            src={cover.resize.src}
+            alt={title}
+            size='small'
+            label={{ as: 'a', color: 'grey', content: genre[0].name, attached: 'top right', size: 'tiny', href: `/generos/${genre[0].id}` }}
+            />
+            <b>{title}</b>
+            <br/>
+            <Header as='h6' style={{
+              marginTop: '0rem',
+            }}>
+              {date}
+            </Header>
+            </Link>
 
-        <List.Item key={id} align='right'>
-        <Link
-        to={`/libros/${id}`}
-        style={{
-          textDecoration: `none`,
-        }}
-        >
-        <Image
-        right
-        src={cover.resize.src}
-        alt={title}
-        />
-        <Header as='h6' style={{
-          textTransform: 'uppercase'
-        }}>
-        {title}
-        </Header>
-        </Link>
-
-        </List.Item>
+            </List.Item>
+          </Grid.Column>
       )
     })}
+    </Grid>
     </List>
   </Layout>
 )
@@ -81,7 +94,7 @@ export const pageQuery = graphql`
       id
       name
       image {
-        resize(width: 300) {
+        resize(width: 250) {
           src
         }
       }
@@ -94,6 +107,11 @@ export const pageQuery = graphql`
       books {
         id
         title
+        date
+        genre {
+          id
+          name
+        }
         cover {
           resize(width: 150) {
             src

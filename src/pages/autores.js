@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Header, Grid, Flag, Item, Divider } from "semantic-ui-react"
+import { Header, Grid, Flag, Item, Divider, Segment, Label, List } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,37 +12,58 @@ export default ({ data }) => (
       textAlign: 'right',
     }}>AUTORES</Header>
     <Divider />
-    <Grid columns={3}>
+    <Grid columns={2} padded>
       {data.allContentfulAuthor.edges.map(({ node, id }) => {
         return (
-          <Grid.Column key={node.id} divided='vertically' mobile={16} tablet={8} computer={5}>
-            <Item.Group relaxed unstackable>
+          <Grid.Column key={node.id} mobile={16} tablet={8} computer={8}>
+
+
+          <Segment>
+            <Item.Group relaxed unstackable divided>
               <Item>
                 <Item.Image
-                  fluid
-                  centered
-                  circular
-                  size='tiny'
+                  left
+                  rounded
+                  size='small'
                   src={node.image.resize.src}
                   alt={node.id}
                   as='a'
                   href={`/autores/${node.id}`}  />
 
-
                   <Item.Content verticalAlign='middle'>
                     <Item.Header as='a' href={`/autores/${node.id}`} >
-                      <Header as='h6' style={{
+                      <Header as='h5' style={{
                         textTransform: 'uppercase'
-                      }}><Flag name={node.country} /> {node.name}</Header>
+                      }}> {node.name}</Header>
                     </Item.Header>
+                    <Item.Description>
 
-                    <Item.Description><Header as='h6' style={{
-                      color: 'grey'
-                    }}> {node.birth}<br/>{node.death}</Header></Item.Description>
-                    </Item.Content>
+                      <Header as='h6' style={{
+                        color: 'grey',
+                        textAlign: 'left'
+
+                      }}> {node.birth}<br/>{node.death}</Header>
+                    </Item.Description>
+                    <Divider />
+                    <Item.Extra>
+                      <List size='tiny' color='black' >
+                        <List.Item as='a' href={`/libros/${node.books[0].id}`} style={{
+                          textTransform: 'uppercase'
+                        }}>
+                        ►<b>{node.books[0].title}</b> ({node.books[0].date})
+                        </List.Item>
+
+                        </List>
+
+                    </Item.Extra>
+                  </Item.Content>
 
               </Item>
+              <Label corner='left' size='large' attached='top left'>
+              <Flag name={node.country} />
+              </Label>
             </Item.Group>
+            </Segment>
           </Grid.Column>
         )
       })}
@@ -58,13 +79,18 @@ export const query = graphql`
           id
           name
           image {
-            resize(width: 200) {
+            resize(width: 250) {
               src
             }
           }
           country
           birth
           death
+          books {
+            id
+            title
+            date
+          }
         }
       }
     }

@@ -14,8 +14,10 @@ export default ({ data }) => (
           <Image
             centered
             rounded
+            fluid
             src={data.contentfulBook.cover.resize.src}
             alt={data.contentfulBook.title}
+            label={{ as: 'a', color: 'grey', content: data.contentfulBook.genre[0].name, attached: 'bottom right', size: 'medium', href: `/generos/${data.contentfulBook.genre[0].id}` }}
           />
 
         </Grid.Column>
@@ -32,8 +34,9 @@ export default ({ data }) => (
                 <Link to={`/autores/${data.contentfulBook.author[0].id}`}>
                   <Header as="h5" color='blue' style={{
                     textAlign: `right`,
+                    textTransform: `uppercase`
                   }}>
-                        <u>{data.contentfulBook.author[0].name}</u>
+                        {data.contentfulBook.author[0].name}
                   </Header>
                 </Link>
               </Header.Subheader>
@@ -45,14 +48,11 @@ export default ({ data }) => (
                 }}>
                   Colección{" "}
                   <Link to={`/colecciones/${data.contentfulBook.collection[0].id}`}>
-                  {data.contentfulBook.collection[0].name}
+                  <b>{data.contentfulBook.collection[0].name}</b>
                   </Link>
                   <br/>
-                  {data.contentfulBook.date} —{" "}
-                  <Link to={`/generos/${data.contentfulBook.genre[0].id}`}>
-                  {data.contentfulBook.genre[0].name}
-                  </Link>
-                  <br/>{data.contentfulBook.pages} págs. |  {data.contentfulBook.binding}
+                  {data.contentfulBook.date}
+                  <br/>{data.contentfulBook.pages} págs. {data.contentfulBook.binding}
                 </Header>
               </Header.Subheader>
             </Header>
@@ -75,7 +75,7 @@ export default ({ data }) => (
                   <p
                   key={index}
                   style={{
-                    textAlign: 'justify',
+                    textAlign: 'left',
                     fontSize: '0.9em',
                   }}
                   >

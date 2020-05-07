@@ -30,7 +30,7 @@ export default ({ siteTitle }) => (
     }}>
       <Grid.Column width={5}>
       </Grid.Column>
-      <Grid.Column width={6} style={{
+      <Grid.Column width={5} style={{
         marginTop: '15em'
       }}>
           <Header as="h3"  textAlign='center' style={{textTransform: 'uppercase', fontWeight: '900', }}>
@@ -44,7 +44,7 @@ export default ({ siteTitle }) => (
       </Grid.Column>
     </Grid>
     <Container text textAlign='center' attached="bottom" fluid style={{
-      marginTop: '10em'
+      marginTop: '6em'
     }}>
       <Link to="#inicio">
         <Header as='h3'>editorialderiva.org</Header>

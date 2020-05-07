@@ -28,14 +28,8 @@ export default ({ data }) => (
       <br/>
     <Form action="https://formspree.io/editorialderiva@gmail.com" method="POST">
       <Form.Group widths='equal'>
-        <Form.Field required>
-          <label>Nombre</label>
-          <input type='text' name='name' placeholder='Nombre de contacto' />
-        </Form.Field>
-        <Form.Field required>
-          <label>Correo</label>
-          <input name='_replyto' placeholder='correo@ejemplo.org' />
-        </Form.Field>
+        <Form.Input required label='Nombre' type='text' name='name' placeholder='Nombre de contacto' />
+        <Form.Input required label='Correo' name='_replyto' placeholder='correo@ejemplo.org' />
       </Form.Group>
       <Form.TextArea required label='Mensaje' name='message' placeholder='Déjanos tu mensaje' />
       <Form.Field required>

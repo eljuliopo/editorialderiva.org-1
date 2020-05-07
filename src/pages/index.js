@@ -11,8 +11,8 @@ export default () => (
   <Indexcover />
   <Corteindex />
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Home></Home>
+    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
   </Layout>
   </div>
 )

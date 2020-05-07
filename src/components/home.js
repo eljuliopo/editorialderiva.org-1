@@ -1,34 +1,31 @@
 import React from "react"
-import { Grid, Segment, Container, Divider, Header, Image } from "semantic-ui-react"
-import Logo from "../images/Logo.svg"
+import { Grid, Segment, Container, Divider, Header } from "semantic-ui-react"
 
 export default ({ siteTitle }) => (
   <div
     style={{
-      marginTop: `4em`,
+      marginTop: `0em`,
+      marginBottom: '0em',
     }}
   >
   <Container vertical textAlign="center" style={{
       position: 'relative',
       boxSizing: 'content-box',
   }} />
-  <Image textAlign='centered' size='small' src={ Logo } floated='left' style={{
-    paddingTop: '0.3em',
-    marginBottom: '0em',
-    textAlign: 'centered',
-  }}/>
-  <Header as='h3' textAlign='left' dividing>
-  editorialderiva.org
-  <Header.Subheader>
-  EDICIÓN & MANUFACTURA DE LIBROS
-  </Header.Subheader>
-  </Header>
     <Grid stackable columns='equal' style={{
       textAlign: 'left'
     }}>
       <Grid.Column width={1}>
       </Grid.Column>
       <Grid.Column width={10}>
+      <Header as='h3' textAlign='left' dividing style={{
+        marginTop: '0em',
+      }}>
+      editorialderiva.org
+      <Header.Subheader>
+      EDICIÓN & MANUFACTURA DE LIBROS
+      </Header.Subheader>
+      </Header>
         <Container text fluid>
           <p><br/>
           <b>EDITORIAL DERIVA</b> se conforma con el objetivo de proveer materiales teóricos que permitan acompañar y potenciar las luchas que despliega la población oprimida y explotada de este y otros territorios.

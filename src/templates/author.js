@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Header, List, Flag, Image, Container, Grid, Divider, Label, Segment } from "semantic-ui-react"
+import { Header, List, Flag, Image, Container, Grid, Divider } from "semantic-ui-react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,16 +11,13 @@ export default ({ data }) => (
     <Grid>
       <Grid.Row>
         <Grid.Column mobile={16} tablet={8} computer={4}>
-          <Segment>
+
             <Image
             size='big'
             src={data.contentfulAuthor.image.resize.src}
             alt={data.contentfulAuthor.name}
             />
-            <Label corner='left' size='large' attached='top left'>
-            <Flag name={data.contentfulAuthor.country} />
-            </Label>
-          </Segment>
+
         </Grid.Column>
       <Grid.Column mobile={16} tablet={8} computer={12}>
         <Header as="h3" style={{textTransform:'uppercase',textAlign:'left', paddingTop:'0.5em',}}>
@@ -30,8 +27,8 @@ export default ({ data }) => (
             fontSize:'0.5em',
             fontWeight: 'strong',
           }}>
-
-           {data.contentfulAuthor.birth} <br/>{data.contentfulAuthor.death}
+          <Flag name={data.contentfulAuthor.country} /> <br />
+           {data.contentfulAuthor.birth} — {data.contentfulAuthor.death}
           </Header.Subheader>
         </Header>
         <Divider/>

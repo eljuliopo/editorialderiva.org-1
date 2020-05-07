@@ -23,10 +23,10 @@ export default ({ data }) => (
           </Segment>
         </Grid.Column>
       <Grid.Column mobile={16} tablet={8} computer={12}>
-        <Header as="h2" style={{textTransform:'uppercase',textAlign:'right'}}>
+        <Header as="h3" style={{textTransform:'uppercase',textAlign:'left', paddingTop:'0.5em',}}>
         {data.contentfulAuthor.name}
           <Header.Subheader bold='true' style={{
-            textAlign: 'right',
+            textAlign: 'left',
             fontSize:'0.5em',
             fontWeight: 'strong',
           }}>
@@ -44,7 +44,7 @@ export default ({ data }) => (
     </Grid>
     <Divider />
     <List>
-    <Header as='h4' textAlign='right'>
+    <Header as='h4' textAlign='centered'>
     En esta editorial:
     </Header>
 

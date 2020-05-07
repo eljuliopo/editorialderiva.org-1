@@ -8,7 +8,7 @@ export default ({ siteTitle }) => (
   <header
     style={{
       // background: `rebeccapurple`,
-      marginBottom: `3.45rem`,
+      marginBottom: `6rem`,
       // position: `fixed`,
     }}
   >
@@ -16,7 +16,7 @@ export default ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `0rem 1.0875rem`,
       }}
     >
       <Menu

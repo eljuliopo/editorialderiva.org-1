@@ -27,13 +27,13 @@ export default ({ data }) => (
           <div>
             <Header as="h3"  style={{
               textTransform: `uppercase`,
-              textAlign: `right`,
+              textAlign: `left`,
             }}>
             {data.contentfulBook.title}{" "}
               <Header.Subheader>
                 <Link to={`/autores/${data.contentfulBook.author[0].id}`}>
                   <Header as="h5" color='blue' style={{
-                    textAlign: `right`,
+                    textAlign: `left`,
                     textTransform: `uppercase`
                   }}>
                         {data.contentfulBook.author[0].name}
@@ -44,7 +44,7 @@ export default ({ data }) => (
               <Header.Subheader>
                 <Header as="h6" color='grey' style={{
                   textTransform: `uppercase`,
-                  textAlign: `right`,
+                  textAlign: `left`,
                 }}>
                   Colección{" "}
                   <Link to={`/colecciones/${data.contentfulBook.collection[0].id}`}>
@@ -57,7 +57,7 @@ export default ({ data }) => (
               </Header.Subheader>
             </Header>
             <Divider />
-            <Container textAlign='right'>
+            <Container textAlign='left'>
             <Header as='h6' color='grey'  style={{
               textTransform: 'uppercase',
             }}>
@@ -90,7 +90,7 @@ export default ({ data }) => (
               <Label basic color='black'>
               <Icon name='print' /> Valor impreso: ${data.contentfulBook.price}
               </Label>
-              <Label as='a' basic color='blue' content='Versión digital' icon='book' href={data.contentfulBook.link} target='_blank' />
+              <Label as='a' basic color='blue' content='Versión PDF' icon='book' href={data.contentfulBook.link} target='_blank' />
               </Container>
 
               </Container>

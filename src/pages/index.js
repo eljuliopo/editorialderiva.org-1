@@ -4,10 +4,12 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Indexcover from "../components/indexcover"
 import Home from "../components/home"
+import Corteindex from "../components/corteindex"
 
 export default () => (
   <div>
   <Indexcover />
+  <Corteindex />
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Home></Home>

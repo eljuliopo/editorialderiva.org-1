@@ -12,7 +12,7 @@ export default () => (
   <Corteindex />
   <Layout>
     <Home></Home>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Inicio" keywords={[`gatsby`, `application`, `react`]} />
   </Layout>
   </div>
 )

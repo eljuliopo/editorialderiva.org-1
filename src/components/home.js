@@ -28,13 +28,18 @@ export default ({ siteTitle }) => (
       </Header>
         <Container text fluid>
           <p><br/>
-          <b>EDITORIAL DERIVA</b> nace como una intención de promover y proponer material teórico que acompañe, y ojalá potencie, la crítica y la lucha que despliega la población oprimido-explotada de este y otros territorios.
+          <b>EDITORIAL DERIVA</b> se forma con la intención de promover y proponer material teórico que acompañe, y ojalá potencie, la crítica y la lucha que despliega la población oprimido-explotada de este y otros territorios del planeta.
           </p>
-          <p>El proyecto editorial surge desde la exploración y naufragio por el vasto océano del conocimiento, afirmando que cualquier división entre saberes no es más que una incompleta forma de experienciar el mundo. Lejos de seguir una sola corriente dentro del enorme flujo de ideas acumuladas en la desventura humana, preferimos adentrarnos, a tientas, hacia la deriva teórica. En este océano donde (para bien) han muerto las certidumbres, navegamos sin más dirección que aquella que propone el viento, guiados por la intuición de visibilizar relatos de enorme poder emancipatorio que no han tenido cabida bajo las rígidas estructuras ortodoxas.
+          <p>El proyecto editorial surge desde la exploración y naufragio por el vasto océano del conocimiento, aceptando que cualquier división entre saberes no es más que una incompleta forma de experienciar el mundo. Lejos de seguir una sola corriente dentro del enorme flujo de ideas acumuladas en la desventura humana, preferimos adentrarnos, a tientas, hacia la deriva teórica. En este océano donde (para bien) han muerto las certidumbres, navegamos sin más dirección que aquella que propone el viento, guiados por la intuición de visibilizar relatos de enorme poder emancipatorio que además, creemos, no han tenido cabida bajo las rígidas estructuras ortodoxas.
           </p>
-          <p>Como timón y vela asumimos la crítica y la perspectiva histórica, para situarnos en un punto espacial que nos permita integrar las repercusiones que genera cualquier aporte desde un campo del conocimiento a otro. A su vez, nos reconocemos en todas aquellas situaciones antiautoritarias que ha parido la civilización, impulsados por el afán de promover un cuestionamiento que contribuya a descomponer este entramado de relaciones humanas explotadoras, inconexas y alienantes.
+          <p>Como timón y vela asumimos la crítica y la perspectiva histórica, situándonos en un punto espacial que nos permita integrar las repercusiones que genera cualquier aporte desde un campo del conocimiento a otro. A su vez, nos reconocemos en todas aquellas situaciones antiautoritarias que ha parido la civilización, impulsados por el afán de alimentar —y alentar— un cuestionamiento que contribuya a descomponer este entramado de relaciones humanas explotadoras, inconexas y alienantes.
           </p>
-          <p>Desde el sur del río Maule, geografía que presenció la resistencia al inca, el avance del imperio español y el disciplinamiento y descomposición del campesinado, buscamos aportar al desmantelamiento teórico y político de la ideología que violenta las sociedades humanas, que secuestra su autonomía y libertad, y degrada progresivamente las condiciones de mantención de la vida en amplias regiones del planeta. Esperamos que la difusión de los elementos teóricos en este sitio web contribuya a potenciar la movilización popular contra la explotación de clases sociales, ayuden a subvertir el modo de vida capitalista imperante y a detener el avance extractivista global.
+          <p>Desde el sur del río Maule, geografía que presenció la resistencia al inca, el avance del imperio español y el disciplinamiento y descomposición del campesinado, buscamos aportar al desmantelamiento teórico y político de la ideología que violenta las sociedades humanas, que secuestra su autonomía y libertad, o que degrada progresivamente las condiciones de mantención de la vida en amplias regiones del planeta.
+          </p>
+          <p>Revisa nuestro <a href='/libros'>catálogo abierto</a>, donde podrás encontrar todos los libros en formato PDF para leerlos libremente, aunque también <a href='/contacto'>puedes contactarnos</a> para hacer un pedido con el material impreso.
+          </p>
+          <p>
+          Que la difusión de los elementos teóricos en este sitio web contribuyan a potenciar la movilización popular contra la explotación de clases sociales, estimulen el deseo por subvertir el modo de vida capitalista imperante y acompañen cada gesto para detener el avance extractivista global.
           </p>
           <b>
           <p style={{
@@ -51,7 +56,7 @@ export default ({ siteTitle }) => (
         <Grid.Column width={5}>
         <Segment vertical verticalAlign='center' textAlign='center'>
 
-            <iframe title='fbDeriva' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FeditorialDERIVA%2F&tabs=timeline&width=250&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=944284989104809" width="100%" height="500" style={{border: '0', overflow: 'hidden'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+            <iframe title='fbDeriva' src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FeditorialDERIVA%2F&tabs=timeline&width=250&height=500&small_header=false&adapt_container_width=false&hide_cover=false&show_facepile=false&appId=944284989104809" width="340" height="500" style={{border: '0', overflow: 'hidden', textAlign: 'center'}} scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
         </Segment>
         </Grid.Column>
       </Grid>
